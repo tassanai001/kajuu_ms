@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kajuu_ms/widget/CarouselDemo.dart';
 import 'package:kajuu_ms/widget/ImagsSlider.dart';
+import 'package:kajuu_ms/widget/MusicList.dart';
 
 class Welcome extends StatelessWidget {
   final Shader linearGradient = LinearGradient(
@@ -12,6 +13,14 @@ class Welcome extends StatelessWidget {
   ).createShader(
     Rect.fromLTWH(120, 0.0, 200.0, 70.0),
   );
+
+  getHeight(context) {
+    var width = MediaQuery.of(context).size.height > 684
+        ? MediaQuery.of(context).size.height * 0.25
+        : MediaQuery.of(context).size.height * 0.33;
+
+    return width;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -91,10 +100,11 @@ class Welcome extends StatelessWidget {
             ),
           ),
           SizedBox(
-            width: MediaQuery.of(context).size.width * 1,
-            height: MediaQuery.of(context).size.height * 0.25,
+            width: MediaQuery.of(context).size.width * 2,
+            height: this.getHeight(context),
             child: ImageSlider(),
-          )
+          ),
+          MusicList(),
         ],
       ),
     );

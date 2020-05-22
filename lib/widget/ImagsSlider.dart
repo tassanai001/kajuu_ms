@@ -38,7 +38,8 @@ class ImageSlider extends StatelessWidget {
                               end: Alignment.topCenter,
                               colors: [Colors.black, Colors.transparent],
                             ).createShader(
-                                Rect.fromLTRB(0, 0, rect.width, rect.height));
+                              Rect.fromLTRB(0, 0, rect.width, rect.height),
+                            );
                           },
                           blendMode: BlendMode.srcOver,
                           child: Image.network(
